@@ -17,3 +17,8 @@ Steps I took to implement this pipeline:
 3. Read image and prepare input to the network
 4. Make predictions and parse keypoints
 5. Draw skeleton
+
+To run this code:
+1. Download weights from above link and paste it in "pose/COCO" and "pose/mpi" folders respectively 
+2. Inference notebook can be directly run with respective images
+3. Run PoseEstVideo.py with sample videos to get the video output
