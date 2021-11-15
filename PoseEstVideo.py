@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 
 parser = argparse.ArgumentParser(description='Run keypoint detection')
-parser.add_argument("--device", default="cpu", help="Device to inference on")
+parser.add_argument("--device", default="gpu", help="Device to inference on")
 parser.add_argument("--video_file", default="sample_video2.mp4", help="Input Video")
 
 args = parser.parse_args()
@@ -12,14 +12,14 @@ args = parser.parse_args()
 MODE = "COCO"
 
 if MODE is "COCO":
-    protoFile = "pose/coco/pose_deploy_linevec.prototxt"
-    weightsFile = "pose/coco/pose_iter_440000.caffemodel"
+    protoFile = "openpose/models/pose/coco/pose_deploy_linevec.prototxt"
+    weightsFile = "openpose/models/pose/coco/pose_iter_440000.caffemodel"
     nPoints = 18
     POSE_PAIRS = [ [1,0],[1,2],[1,5],[2,3],[3,4],[5,6],[6,7],[1,8],[8,9],[9,10],[1,11],[11,12],[12,13],[0,14],[0,15],[14,16],[15,17]]
 
 elif MODE is "MPI" :
-    protoFile = "pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
-    weightsFile = "pose/mpi/pose_iter_160000.caffemodel"
+    protoFile = "openpose/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
+    weightsFile = "openpose/models/pose/mpi/pose_iter_160000.caffemodel"
     nPoints = 15
     POSE_PAIRS = [[0,1], [1,2], [2,3], [3,4], [1,5], [5,6], [6,7], [1,14], [14,8], [8,9], [9,10], [14,11], [11,12], [12,13] ]
 
